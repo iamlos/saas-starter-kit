@@ -22,6 +22,7 @@
       "@/components/*": ["components/*"],
     },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-auth.d.ts"],
+  "files": ["globals.d.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-auth.d.ts", "/components", "/lib/custom.d.ts"],
   "exclude": ["node_modules"],
 }

@@ -1,0 +1,29 @@
+.decoBlockBorder {
+  position: relative;
+}
+
+.decoBlockBorder::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 35px;
+  background-image: url('/highlights/plus-deco.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.decoBlockBorder::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: 0;
+  right: 35px;
+  background-image: url('/highlights/plus-deco.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}

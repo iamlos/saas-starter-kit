@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark light;
+  color-scheme: dark;
 }
 
 html,
@@ -46,7 +46,7 @@ a {
   }
 
   .btn {
-    @apply rounded normal-case;
+    @apply normal-case rounded;
   }
 
   .modal-box {
@@ -63,24 +63,25 @@ a {
 }
 
 .btn-md {
-  @apply min-h-8 h-10;
+  @apply h-10 min-h-8;
 }
 
 .scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #555555 #f0f0f0;
+  scrollbar-color: #10111D #A3A6C2;
+  opacity: 0.6;
 }
 
 .scrollbar::-webkit-scrollbar {
-  width: 8px;
+  width: 2px;
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-  background-color: #555555;
+  background-color: #56F699;
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background-color: #f0f0f0;
+  background-color: #10111D;
 }
 
 .scrollbar::-webkit-scrollbar-button {

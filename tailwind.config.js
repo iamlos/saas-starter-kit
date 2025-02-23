@@ -8,7 +8,28 @@ module.exports = {
     'node_modules/react-daisyui/dist/**/*.js',
   ],
   daisyui: {
-    themes: ['corporate', 'black'],
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["light"],
+          primary: "#56F699",
+          "base-content": "#A3A6C2",
+        },
+        dark: {
+          ...require("daisyui/src/theming/themes")["dark"],
+          primary: "#56F699",
+          "base-content": "#A3A6C2",
+        },
+      },
+    ],
   },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#56F699',
+        default: '#A3A6C2',
+      },
+    },
+  },
 };

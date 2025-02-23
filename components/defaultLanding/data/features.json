@@ -1,46 +1,47 @@
 [
   {
-    "name": "Create account",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "name": "AI-Powered College Recruiting",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    "icon": "BoltIcon"
   },
   {
-    "name": "Sign in with Email and Password",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "name": "Athlete Profile",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "icon": "EnvelopeIcon"
   },
   {
-    "name": "Sign in with Magic link",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "name": "Powerful Search",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "icon": "MagnifyingGlassIcon"
   },
   {
-    "name": "Sign in with SAML SSO",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "name": "Developmental Coaching",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "icon": "PencilIcon"
   },
   {
-    "name": "Directory Sync (SCIM)",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "name": "NIL Deal Finder",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    "icon": "CurrencyDollarIcon"
   },
   {
     "name": "Update account",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    "icon": "UserCircleIcon"
   },
   {
     "name": "Invite users to the team",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    "icon": "UserPlusIcon"
   },
   {
     "name": "Manage team members",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    "icon": "UsersIcon"
   },
   {
     "name": "Update team settings",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-  },
-  {
-    "name": "Webhooks & Events",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-  },
-  {
-    "name": "Create team",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    "icon": "Cog6ToothIcon"
   }
 ]

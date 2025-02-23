@@ -2,23 +2,77 @@
 const { i18n } = require('./next-i18next.config');
 const { withSentryConfig } = require('@sentry/nextjs');
 
+// Add Sentry webpack plugin options
+const sentryWebpackPluginOptions = {
+  silent: true,
+  hideSourceMaps: true,
+};
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '4002',
+        pathname: '/highlights/**',
+      },
+      {
+        protocol: 'http',
+        hostname: '192.168.254.45',
+        port: '4002',
+        pathname: '/highlights/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'onetaprecruit.com',
+      },
+      {
         protocol: 'https',
         hostname: 'boxyhq.com',
+        pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'files.stripe.com',
       },
+      {
+        protocol: 'http',
+        hostname: 'www.hope3k.net',
+        port: '',
+        pathname: '/images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'otrai.s3.us-east-2.amazonaws.com',
+        pathname: '/assets/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '1000logos.net',
+        pathname: '/wp-content/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'dxbhsrqyrr690.cloudfront.net',
+        pathname: '/sidearm.nextgen.sites/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'opendorseinc.wpenginepowered.com',
+        pathname: '/wp-content/uploads/**',
+      }
     ],
   },
   i18n,
-  rewrites: async () => {
+  async rewrites() {
     return [
       {
         source: '/.well-known/saml.cer',
@@ -51,13 +105,48 @@ const nextConfig = {
       },
     ];
   },
-};
+  
+  // webpack: (config) => {
+  //   config.module.rules.push({
+  //     test: /\.css$/,
+  //     use: [
+  //       {
+  //         loader: 'css-loader',
+  //         options: {
+  //           importLoaders: 1,
+  //           modules: {
+  //             auto: true,
+  //             localIdentName: '[local]_[hash:base64:5]'
+  //           },
+  //           url: {
+  //             filter: (url) => {
+  //               // Don't handle SVG Data URLs
+  //               if (url.startsWith('data:')) {
+  //                 return false;
+  //               }
+  //               return true;
+  //             },
+  //           },
+  //         }
+  //       },
+  //       'postcss-loader'
+  //     ],
+  //   });
 
-// Additional config options for the Sentry webpack plugin.
-// For all available options: https://github.com/getsentry/sentry-webpack-plugin#options.
-const sentryWebpackPluginOptions = {
-  silent: true,
-  hideSourceMaps: true,
+  //   config.module.rules.push({
+  //     test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+  //     type: 'asset/resource',
+  //     generator: {
+  //       publicPath: '/_next/',
+  //       outputPath: 'static/media/',
+  //     },
+  //   });
+
+  //   return config;
+  // },
+  
+  
+  
 };
 
 module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);

@@ -1,0 +1,38 @@
+.decoLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  margin: 2rem 0;
+}
+
+.plusSign {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.plusSign::before,
+.plusSign::after {
+  content: '';
+  position: absolute;
+  background-color: #56F699;
+  opacity: 0.6;
+}
+
+.plusSign::before {
+  width: 24px;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.plusSign::after {
+  width: 2px;
+  height: 24px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}

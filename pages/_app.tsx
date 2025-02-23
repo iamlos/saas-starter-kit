@@ -14,57 +14,25 @@ import env from '@/lib/env';
 import { Theme, applyTheme } from '@/lib/theme';
 import { Themer } from '@boxyhq/react-ui/shared';
 import { AccountLayout } from '@/components/layouts';
+import PublicLayout from '@/components/layouts/PublicLayout';
 
-function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const { session, ...props } = pageProps;
-
-  // Add mixpanel
-  useEffect(() => {
-    if (env.mixpanel.token) {
-      mixpanel.init(env.mixpanel.token, {
-        debug: true,
-        ignore_dnt: true,
-        track_pageview: true,
-      });
-    }
-
-    if (env.darkModeEnabled) {
-      applyTheme(localStorage.getItem('theme') as Theme);
-    }
-  }, []);
-
-  const getLayout =
-    Component.getLayout || ((page) => <AccountLayout>{page}</AccountLayout>);
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppPropsWithLayout) {
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout ?? ((page) => {
+    // Check if the page is a public route (not requiring auth)
+    const isPublicRoute = !Component.requireAuth;
+    return isPublicRoute ? (
+      <PublicLayout>{page}</PublicLayout>
+    ) : (
+      page
+    );
+  });
 
   return (
-    <>
-      <Head>
-        <title>{app.name}</title>
-        <link rel="icon" href="https://boxyhq.com/img/favicon.ico" />
-      </Head>
-      <SessionProvider session={session}>
-        <Toaster toastOptions={{ duration: 4000 }} />
-        <Themer
-          overrideTheme={{
-            '--primary-color': colors.blue['500'],
-            '--primary-hover': colors.blue['600'],
-            '--primary-color-50': colors.blue['50'],
-            '--primary-color-100': colors.blue['100'],
-            '--primary-color-200': colors.blue['200'],
-            '--primary-color-300': colors.blue['300'],
-            '--primary-color-500': colors.blue['500'],
-            '--primary-color-600': colors.blue['600'],
-            '--primary-color-700': colors.blue['700'],
-            '--primary-color-800': colors.blue['800'],
-            '--primary-color-900': colors.blue['900'],
-            '--primary-color-950': colors.blue['950'],
-          }}
-        >
-          {getLayout(<Component {...props} />)}
-        </Themer>
-      </SessionProvider>
-    </>
+    <SessionProvider session={session}>
+      {getLayout(<Component {...pageProps} />)}
+    </SessionProvider>
   );
 }
 
-export default appWithTranslation<never>(MyApp);
+export default appWithTranslation(MyApp);
